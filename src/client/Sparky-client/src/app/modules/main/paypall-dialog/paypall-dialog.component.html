@@ -1,0 +1,9 @@
+<!-- <<p>paypal works!</p> -->
+<div *ngIf = "!paidFor">
+    <p>{{product.description}}</p>
+</div>
+
+<div *ngIf = "paidFor">
+    <h1> Yes, it works</h1>
+</div>
+<div #paypal></div>

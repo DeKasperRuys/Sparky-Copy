@@ -1,0 +1,51 @@
+<div *ngIf="!stations" class="loading">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+
+<div *ngIf="stations">
+  <agm-map
+    [styles]="mapStyles"
+    [latitude]="lat"
+    [longitude]="lng"
+    class="absolute"
+    [zoom]="16"
+    [streetViewControl]="false"
+    maxZoom="18"
+    minZoom="15"
+  >
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    <agm-marker
+      *ngFor="let s of stations"
+      [latitude]="s.mlat"
+      [longitude]="s.mlon"
+    ></agm-marker>
+
+    <agm-marker
+      *ngFor="let station of stations; let i = index"
+      [latitude]="station.mlat"
+      [longitude]="station.mlon"
+      [iconUrl]="pinSparky"
+      (markerClick)="openDialog(station)"
+    >
+    <!--
+      <agm-info-window [disableAutoPan]="true">
+        <p>
+          <b>{{ m.name }}</b>
+        </p>
+        <p>LAT: {{ m.lat }} LONG: {{ m.lon }}</p>
+        <p>Op deze locatie zijn er {{ m.numOfSlots }} batterij slots.</p>
+      </agm-info-window>
+    -->
+    </agm-marker>
+  </agm-map>
+</div>
+<div class="center">
+  <button
+    type="button"
+    class="btn btn-warning btn-circle btn-xl center-block"
+    routerLink="/main/scanner"
+  >
+  <p *ngIf="isReturn" class="btn-text">RETURN</p>
+    <p *ngIf="!isReturn" class="btn-text">CHARGE</p>
+  </button>
+</div>

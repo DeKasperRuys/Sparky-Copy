@@ -1,0 +1,17 @@
+<div>
+        <h3>{{data?.name}}</h3>  
+        <div class="available-slots">
+            <div *ngFor="let slot of data.slots">
+                    <div  [ngClass]="{empty: slot?.isEmpty,full: !slot?.isEmpty}" class="slot-detail">
+                            <p *ngIf="!slot?.isEmpty">{{slot?.levedCharged}}%</p>
+                    </div>
+            </div>
+        </div>
+        <p *ngIf="fullSlots.length !== 0">{{fullSlots.length}} powerbanks available</p>
+            <p *ngIf="fullSlots.length === 0">No more powerbanks available</p>
+            <div class="action">
+                        <button (click)="onClose()" class="button-medium">Close</button>
+                        <button style="background-color:#1D1C3D" (click)="onClose()" routerLink="/main/scanner" class="button-medium">Scan</button>
+            </div>
+            
+</div>

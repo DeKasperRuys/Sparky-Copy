@@ -1,0 +1,65 @@
+<div class="container">
+    <div *ngIf="!showstart && !showreturn && !StopLoanData " class="loading">
+        <mat-spinner color="accent"></mat-spinner>
+    </div>
+    <mat-card *ngIf="showstart">
+        <div class="flash">
+            <img src="../../../../assets/flash.png">
+        </div>
+        <div class="header">
+            <p>press unluck and take your powerbank</p>
+        </div>
+        <div class="row">
+            <div>
+                <p>name</p>
+                <h3>{{powerbank.name}}</h3>
+            </div>
+            <div>
+                <p>charge</p>
+                <h3>{{powerbank.level}}%</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>station</p>
+                <h3>{{powerbank.currentStationName}}</h3>
+            </div>
+            <div>
+                <p>slot</p>
+                <h3>{{powerbank.slotId}}</h3>
+            </div>
+        </div>
+        <button mat-raised-button color="accent" *ngIf="unlock" (click)="startLoan()">Unlock</button>
+        <button mat-raised-button color="accent" *ngIf="!unlock" (click)="close()">Lock</button>
+    </mat-card>
+    <mat-card *ngIf="showreturn && StopLoanData">
+        <div class="flash">
+            <img src="../../../../assets/flash.png">
+        </div>
+        <div class="header">
+            <p>press unluck and take your powerbank</p>
+        </div>
+        <div class="row">
+            <div>
+                <p>started</p>
+                <h3>{{StopLoanData.startDateTime | date:'dd/MM/yyyy'}}</h3>
+            </div>
+            <div>
+                <p>end time</p>
+                <h3>{{StopLoanData.stopDateTime | date:'dd/MM/yyyy'}}%</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p>time</p>
+                <h3>{{StopLoanData.duration }}</h3>
+            </div>
+            <div>
+                <p>price</p>
+                <h3>{{StopLoanData.price}}</h3>
+            </div>
+        </div>
+        
+        <button mat-raised-button color="accent" (click)="pay()">Pay</button> 
+    </mat-card>
+</div>

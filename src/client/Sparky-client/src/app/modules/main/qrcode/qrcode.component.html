@@ -1,0 +1,19 @@
+<div class="instruction">
+  <img src="../../../../assets/qr-code.svg">
+  <p>Scan de QR code op het station:</p>
+  <p class="desc">0,25€ om te beginnen en 0,25€/minuut wanneer gestart.</p>
+</div>
+<div class="scanner">
+    <zxing-scanner
+      *ngIf="!qrResultString"
+      [torch]="torchEnabled"
+      [(device)]="currentDevice"
+      (scanSuccess)="onCodeResult($event)"
+      [formats]="formatsEnabled"
+      [tryHarder]="tryHarder"
+      (permissionResponse)="onHasPermission($event)"
+      (camerasFound)="onCamerasFound($event)"
+      (torchCompatible)="onTorchCompatible($event)"
+    ></zxing-scanner>
+  </div>
+

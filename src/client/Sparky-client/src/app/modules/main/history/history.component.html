@@ -1,0 +1,28 @@
+<div class="content2">
+    <h1 class="h1">General</h1>
+
+    <div class="general mat-elevation-z1">
+        <div>
+            <div class="title">Total</div>
+            <div class="value">2h 30min</div>
+        </div>
+        <div>
+            <div class="title">Spent</div>
+            <div class="value">{{totalPrice}}€</div>
+        </div>
+    </div>
+    <h1 class="h1">History</h1>
+    <div class="history mat-elevation-z2">
+            <mat-card class="wrapper" *ngFor="let loan of loanHistory">
+                <div class="container">
+                    <div>
+                        <div class="date">{{loan.date}}</div>
+                        <div class="time">{{loan.duration}} min</div>
+                    </div>
+                    
+                    <div class="price"> €{{loan.price}}</div>
+                </div>
+            </mat-card>
+        </div>
+</div>
+

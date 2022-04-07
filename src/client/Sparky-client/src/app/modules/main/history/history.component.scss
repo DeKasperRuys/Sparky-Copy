@@ -1,0 +1,68 @@
+.wrapper{
+    margin-bottom: 5px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.h1{
+    margin: 20px 0px;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+}
+.price{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+
+}
+.time{
+    text-align: left;
+    color: #A3AFB7;
+    font-weight: 500;
+    font-size: 14px;
+}
+.date{
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(0,0,0,0.85);
+}
+.content2{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+.history{
+    margin-top: 5px;
+    height: 200px;
+    overflow: scroll;    
+    flex-grow : 1;
+}
+.general{  
+    text-align: center;  
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    background-color: white;
+}
+.title{
+    color: #A3AFB7;
+    font-weight: 400;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.value{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: rgba(0,0,0,0.85);
+}
+mat-card{
+    border-radius: 0px !important;
+}
+
+

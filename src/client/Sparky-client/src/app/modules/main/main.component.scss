@@ -1,0 +1,57 @@
+.logo {
+    height: 25px;
+  }
+mat-toolbar{
+    position: fixed;
+    z-index: 999;
+    background-color: white !important;
+    height: 45px;
+}
+mat-sidenav-container{
+    height: 100%;
+    background-color: #F4F4F4 !important;
+
+}
+.router-outlet{
+    padding-top: 45px;
+    height: 100%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.menu{
+    img{
+        height: 18px;
+    }
+}
+.nav-header{
+    text-align: left;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 15px;
+    height: 80px;
+    img{
+        height: 40px;
+    }
+}
+.navi-item{
+    display: block;
+    cursor: pointer;
+    padding: 10px 25px;
+    padding-left: 15px;
+    img{
+        vertical-align: middle;
+        width:15px;
+        display: inline;
+        margin-right: 20px;
+    }
+    p{
+        font-size: 14px;
+        font-weight: 600;
+        display: inline;
+        vertical-align: middle;
+        letter-spacing: 3px;
+        color: black;
+        text-decoration: none;
+    }
+}

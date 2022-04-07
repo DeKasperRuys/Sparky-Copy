@@ -1,0 +1,29 @@
+<div class="canvas">
+    <div id="circle"></div>
+  </div>
+  <div class="container">
+    <img class="logo" src="../../../../assets/images/SparkyPNG.png" class="logo" alt=""/>
+    <input 
+      style="display: block;margin:auto"
+      class="input-field"
+      type="email"
+      placeholder="Email"
+      #userName
+      required
+      autofocus>
+      <input 
+      style="display: block;margin:auto"
+      type="password"
+      class="input-field"
+      placeholder="Password"
+      #userPassword
+      required>
+      <div class="link">
+        <a routerLink="/intro/login" id="no-acc"> Already have an account?</a>
+      </div>
+      <button class="button-login" (click)="authService.AnalogSingUp(userName.value, userPassword.value)">Register</button>
+      <div class="divide"></div>
+      <div class="google" (click)="authService.SingInWithGoogle()">
+        <img src="../../../../assets/search.svg">
+      </div>
+  </div>

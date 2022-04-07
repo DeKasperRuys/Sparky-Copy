@@ -1,0 +1,48 @@
+
+<mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="over">
+          <div class="nav-header">
+               <img src="../../../assets/flash.png"> 
+          </div>
+    
+                <a class="navi-item"
+                (click)="navigate('/main/maps');sidenav.toggle();">
+                    <img src="../../../assets/home-black-shape.svg">
+                    <p>Home</p>
+                </a>
+                <a class="navi-item" >
+                    <img src="../../../assets/shield.svg">
+                    <p>Account</p>
+                </a>
+                <a class="navi-item" 
+                (click)="updateLoanHistory();navigate('/main/history');sidenav.toggle();" >
+                    <img src="../../../assets/history.svg">
+                    <p>History</p>
+                </a>
+                <a class="navi-item" 
+                (click)="navigate('/main/how-does-it-work');sidenav.toggle();" >
+                    <img src="../../../assets/question.svg">
+                    <p>How does it work?</p>
+                </a>
+                <a class="navi-item" 
+                (click)="auth.SingOut();sidenav.toggle();">
+                    <img src="../../../assets/logout.svg">
+                    <p>Logout</p>
+                </a>        
+        </mat-sidenav>
+        <mat-sidenav-content>
+                <mat-toolbar class="mat-elevation-z1" >
+                        <span class="menu" (click)="sidenav.toggle()"><img src="../../../assets/menu.svg"></span>
+                        <span class="example-spacer"></span>
+                        <span>
+                            <a class="navbar-brand" routerLink="/main/maps">
+                                <img src="../../../../assets/images/SparkyPNG.png" class="logo" alt=""/>
+                            </a>
+                        </span>
+                        <span class="example-spacer"></span>
+                </mat-toolbar>
+                <div class="router-outlet">
+                    <router-outlet ></router-outlet>
+                </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
